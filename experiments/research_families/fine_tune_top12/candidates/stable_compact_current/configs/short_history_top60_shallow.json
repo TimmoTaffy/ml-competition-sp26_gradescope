@@ -1,0 +1,36 @@
+{
+  "profile": "short_history",
+  "target": "target_excess_5d",
+  "target_horizon_days": 5,
+  "selected_features_path": "experiments/feature_selection/short_history/selected_features.txt",
+  "split": {
+    "holdout_test_days": 10,
+    "portfolio_validation_days": 8,
+    "train_lookback_days": 100,
+    "validation_days": 10,
+    "embargo_days": 5,
+    "min_valid_stocks_per_date": 100
+  },
+  "train": {
+    "refit_on_full_known_data": true
+  },
+  "model": {
+    "type": "xgb_regressor",
+    "params": {
+      "n_estimators": 315,
+      "max_depth": 2,
+      "learning_rate": 0.04,
+      "subsample": 0.85,
+      "colsample_bytree": 0.85,
+      "min_child_weight": 25,
+      "reg_lambda": 12.5,
+      "reg_alpha": 0.0,
+      "objective": "reg:squarederror",
+      "eval_metric": "rmse",
+      "tree_method": "hist",
+      "random_state": 2602,
+      "n_jobs": -1
+    },
+    "early_stopping_rounds": 30
+  }
+}

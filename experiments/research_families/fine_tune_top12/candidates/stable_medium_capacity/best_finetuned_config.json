@@ -1,0 +1,52 @@
+{
+  "models": [
+    {
+      "name": "general",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_medium_capacity/model_pool/general/top120_longer_train",
+      "weight": 0.175
+    },
+    {
+      "name": "short_history",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_medium_capacity/model_pool/short_history/top30_deep_interaction",
+      "weight": 0.825
+    }
+  ],
+  "score_combination": "rank_average",
+  "portfolio": {
+    "top_k": 30,
+    "min_stocks": 30,
+    "max_weight": 0.1,
+    "internal_max_weight": 0.04,
+    "weighting": "rank",
+    "cap_redistribution_iterations": 100
+  },
+  "risk_filter": {
+    "enabled": false,
+    "recent_halt_flag_max": 0.0,
+    "low_liquidity_flag_max": 0.0,
+    "missing_days_20d_max": 0.0,
+    "zero_volume_days_20d_max": 0.0,
+    "fallback_to_unfiltered_if_below_min": true
+  },
+  "_global_selection_metadata": {
+    "candidate": "stable_medium_capacity",
+    "selection_score": 0.9300667054139276,
+    "mean_portfolio_excess": 0.0136437503435305,
+    "cumulative_portfolio_excess": 0.1091500027482443,
+    "hit_rate": 0.875,
+    "worst_day": -0.0017200835905665,
+    "mean_rank_ic": 0.0112976517885059
+  },
+  "_fine_tune_metadata": {
+    "candidate": "stable_medium_capacity",
+    "pair_id": "general_top120_longer_train__short_history_top30_deep_interaction",
+    "selection_score": 0.9732800662451069,
+    "mean_portfolio_excess": 0.019907483688100715,
+    "cumulative_portfolio_excess": 0.15925986950480572,
+    "hit_rate": 1.0,
+    "worst_day": 0.008866088581727372,
+    "mean_rank_ic": 0.07285523165548467,
+    "general_variant": "general_top120_longer_train",
+    "short_variant": "short_history_top30_deep_interaction"
+  }
+}

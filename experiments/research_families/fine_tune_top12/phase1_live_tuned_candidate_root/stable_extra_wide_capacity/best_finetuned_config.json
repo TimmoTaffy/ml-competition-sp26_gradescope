@@ -1,0 +1,69 @@
+{
+  "models": [
+    {
+      "name": "general",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_extra_wide_capacity/model_pool/general/top120_longer_train",
+      "weight": 0.285
+    },
+    {
+      "name": "short_history",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_extra_wide_capacity/model_pool/short_history/top140_light_reg",
+      "weight": 0.7150000000000001
+    }
+  ],
+  "score_combination": "rank_average",
+  "portfolio": {
+    "top_k": 46,
+    "min_stocks": 30,
+    "max_weight": 0.1,
+    "internal_max_weight": 0.03,
+    "weighting": "equal",
+    "cap_redistribution_iterations": 100
+  },
+  "risk_filter": {
+    "enabled": false,
+    "recent_halt_flag_max": 0.0,
+    "low_liquidity_flag_max": 0.0,
+    "missing_days_20d_max": 0.0,
+    "zero_volume_days_20d_max": 0.0,
+    "fallback_to_unfiltered_if_below_min": true
+  },
+  "_global_selection_metadata": {
+    "candidate": "stable_extra_wide_capacity",
+    "selection_score": 0.8549320920848699,
+    "mean_portfolio_excess": 0.011191140391328,
+    "cumulative_portfolio_excess": 0.0895291231306243,
+    "hit_rate": 0.75,
+    "worst_day": -0.0057824923745634,
+    "mean_rank_ic": -0.0326420504248637
+  },
+  "_fine_tune_metadata": {
+    "candidate": "stable_extra_wide_capacity",
+    "pair_id": "general_top120_longer_train__short_history_top140_light_reg",
+    "selection_score": 0.973700925925926,
+    "mean_portfolio_excess": 0.018543000124126508,
+    "cumulative_portfolio_excess": 0.14834400099301207,
+    "hit_rate": 1.0,
+    "worst_day": 0.008408679396218479,
+    "mean_rank_ic": 0.0776936552245637,
+    "general_variant": "general_top120_longer_train",
+    "short_variant": "short_history_top140_light_reg"
+  },
+  "_live_portfolio_fine_tune_metadata": {
+    "candidate": "stable_extra_wide_capacity",
+    "final_score": 0.7399835750014888,
+    "score_3w": 0.7625208717918182,
+    "score_7w": 0.7181306199011492,
+    "score_13w": 0.7454429821949621,
+    "final_penalty": 0.0,
+    "mean_3w": 0.01796277128919901,
+    "mean_7w": 0.014537879728714632,
+    "mean_13w": 0.00782217235007023,
+    "hit_3w": 1.0,
+    "hit_7w": 0.8571428571428571,
+    "hit_13w": 0.7692307692307693,
+    "worst_3w": 0.013389694130643677,
+    "worst_7w": -0.01271536593474114,
+    "worst_13w": -0.023449085755843327
+  }
+}

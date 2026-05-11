@@ -1,0 +1,8 @@
+target_return_3d
+target_return_5d
+target_5d
+target_excess_3d
+target_excess_5d
+target_rank_5d
+target_zscore_5d
+target_excess_rank_5d

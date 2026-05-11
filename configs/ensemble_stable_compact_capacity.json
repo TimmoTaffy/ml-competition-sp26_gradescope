@@ -1,0 +1,38 @@
+{
+  "models": [
+    {
+      "name": "general",
+      "dir": "models/final_live_capacity/general",
+      "weight": 0.978
+    },
+    {
+      "name": "short_history",
+      "dir": "models/final_live_capacity/short_history",
+      "weight": 0.022
+    }
+  ],
+  "score_combination": "rank_average",
+  "portfolio": {
+    "top_k": 33,
+    "min_stocks": 30,
+    "max_weight": 0.1,
+    "internal_max_weight": 0.030303030303030304,
+    "weighting": "equal",
+    "cap_redistribution_iterations": 100
+  },
+  "risk_filter": {
+    "enabled": true,
+    "recent_halt_flag_max": 0.0,
+    "low_liquidity_flag_max": 0.0,
+    "missing_days_20d_max": 0.0,
+    "zero_volume_days_20d_max": 0.0,
+    "fallback_to_unfiltered_if_below_min": true
+  },
+  "_source": {
+    "candidate": "stable_compact_capacity",
+    "general_variant": "general_top80_base",
+    "short_history_variant": "short_history_top20_deep_interaction",
+    "selection": "stable-capacity alternative from 3/7/13 live-style portfolio fine-tune",
+    "live_tune_config": "experiments/research_families/fine_tune_top12/live_portfolio_fine_tune_3_7_13/candidates/stable_compact_capacity/best_live_portfolio_config.json"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "models": [
+    {
+      "name": "general",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_compact_current/model_pool/general/top80_shallow",
+      "weight": 0.5465
+    },
+    {
+      "name": "short_history",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/stable_compact_current/model_pool/short_history/top60_recent_train",
+      "weight": 0.4535
+    }
+  ],
+  "score_combination": "rank_average",
+  "portfolio": {
+    "top_k": 31,
+    "min_stocks": 30,
+    "max_weight": 0.1,
+    "internal_max_weight": 0.031758,
+    "weighting": "rank",
+    "cap_redistribution_iterations": 100
+  },
+  "risk_filter": {
+    "enabled": true,
+    "recent_halt_flag_max": 0.0,
+    "low_liquidity_flag_max": 0.0,
+    "missing_days_20d_max": 0.0,
+    "zero_volume_days_20d_max": 0.0,
+    "fallback_to_unfiltered_if_below_min": true
+  },
+  "_global_selection_metadata": {
+    "candidate": "stable_compact_current",
+    "selection_score": 0.9184380177435734,
+    "mean_portfolio_excess": 0.0115250311027802,
+    "cumulative_portfolio_excess": 0.0922002488222416,
+    "hit_rate": 0.875,
+    "worst_day": -0.0039531219509818,
+    "mean_rank_ic": 0.0173680481381893
+  },
+  "_fine_tune_metadata": {
+    "candidate": "stable_compact_current",
+    "pair_id": "general_top80_shallow__short_history_top60_recent_train",
+    "selection_score": 0.9750511479975912,
+    "mean_portfolio_excess": 0.020682752662667083,
+    "cumulative_portfolio_excess": 0.16546202130133666,
+    "hit_rate": 1.0,
+    "worst_day": 0.006026138821698319,
+    "mean_rank_ic": 0.08101872782499624,
+    "general_variant": "general_top80_shallow",
+    "short_variant": "short_history_top60_recent_train"
+  },
+  "_live_portfolio_fine_tune_metadata": {
+    "candidate": "stable_compact_current",
+    "final_score": 0.8344279000178646,
+    "score_3w": 0.9369905317691896,
+    "score_7w": 0.7258854582266419,
+    "score_13w": 0.8865548740546656,
+    "final_penalty": 0.0,
+    "mean_3w": 0.025358169655405226,
+    "mean_7w": 0.012827875688589788,
+    "mean_13w": 0.009603093935345784,
+    "hit_3w": 1.0,
+    "hit_7w": 0.5714285714285714,
+    "hit_13w": 0.5384615384615384,
+    "worst_3w": 0.016568274464532483,
+    "worst_7w": -0.01079446554250689,
+    "worst_13w": -0.016028045344480595
+  }
+}

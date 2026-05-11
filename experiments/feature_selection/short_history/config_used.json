@@ -1,0 +1,73 @@
+{
+  "profile": "short_history",
+  "target": "target_excess_5d",
+  "auxiliary_targets": [
+    "target_excess_3d",
+    "target_rank_5d"
+  ],
+  "test_trading_days": 10,
+  "split": {
+    "mode": "rolling_walk_forward",
+    "train_lookback_days": 80,
+    "min_train_days": 60,
+    "validation_days": 10,
+    "step_days": 10,
+    "embargo_days": 5,
+    "max_folds": 8,
+    "min_valid_stocks_per_date": 100
+  },
+  "candidate_groups": [
+    "short_returns",
+    "short_bollinger",
+    "short_volume_price",
+    "short_risk_liquidity",
+    "short_cross_sectional",
+    "csi500_relative",
+    "market_regime",
+    "industry_relative"
+  ],
+  "base_groups": [
+    "short_returns",
+    "short_volume_price",
+    "short_risk_liquidity",
+    "short_cross_sectional"
+  ],
+  "single_factor": {
+    "quantile": 0.1,
+    "max_missing_rate": 0.35,
+    "min_valid_stocks_per_date": 100
+  },
+  "model": {
+    "top_k": 50,
+    "ridge_alpha": 20.0,
+    "ablation_top_features": 110,
+    "xgb_enabled": true,
+    "xgb_top_features": 70,
+    "xgb_params": {
+      "n_estimators": 120,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 25,
+      "reg_lambda": 8.0,
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "random_state": 2602,
+      "n_jobs": -1
+    }
+  },
+  "selection": {
+    "max_features": 90,
+    "min_features": 30,
+    "top_features_per_group": 6,
+    "weights": {
+      "recent_top_decile_excess": 0.3,
+      "recent_rank_ic": 0.2,
+      "hit_rate": 0.15,
+      "group_ablation": 0.2,
+      "worst_window": 0.1,
+      "missing_penalty": 0.05
+    }
+  }
+}

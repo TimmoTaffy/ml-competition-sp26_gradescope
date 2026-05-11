@@ -1,0 +1,52 @@
+{
+  "models": [
+    {
+      "name": "general",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/short_aggressive_wide_capacity/model_pool/general/top90_recent_train",
+      "weight": 0.225
+    },
+    {
+      "name": "short_history",
+      "dir": "experiments/research_families/fine_tune_top12/candidates/short_aggressive_wide_capacity/model_pool/short_history/top120_light_reg",
+      "weight": 0.775
+    }
+  ],
+  "score_combination": "rank_average",
+  "portfolio": {
+    "top_k": 30,
+    "min_stocks": 30,
+    "max_weight": 0.1,
+    "internal_max_weight": 0.055,
+    "weighting": "rank",
+    "cap_redistribution_iterations": 100
+  },
+  "risk_filter": {
+    "enabled": true,
+    "recent_halt_flag_max": 0.0,
+    "low_liquidity_flag_max": 0.0,
+    "missing_days_20d_max": 0.0,
+    "zero_volume_days_20d_max": 0.0,
+    "fallback_to_unfiltered_if_below_min": true
+  },
+  "_global_selection_metadata": {
+    "candidate": "short_aggressive_wide_capacity",
+    "selection_score": 0.904840735396291,
+    "mean_portfolio_excess": 0.0116306212694588,
+    "cumulative_portfolio_excess": 0.0930449701556705,
+    "hit_rate": 0.875,
+    "worst_day": -0.0018508820335539,
+    "mean_rank_ic": -0.007742920052806
+  },
+  "_fine_tune_metadata": {
+    "candidate": "short_aggressive_wide_capacity",
+    "pair_id": "general_top90_recent_train__short_history_top120_light_reg",
+    "selection_score": 0.9541348313760916,
+    "mean_portfolio_excess": 0.019130101069668823,
+    "cumulative_portfolio_excess": 0.15304080855735058,
+    "hit_rate": 1.0,
+    "worst_day": 0.0016103553223079865,
+    "mean_rank_ic": 0.07491923874911924,
+    "general_variant": "general_top90_recent_train",
+    "short_variant": "short_history_top120_light_reg"
+  }
+}
